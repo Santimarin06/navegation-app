@@ -45,6 +45,12 @@ const StackLayout = () => {
         }}
       />
       <Stack.Screen
+        name="cart/index"
+        options={{
+          title: "Carrito",
+        }}
+      />
+      <Stack.Screen
         name="profile/index"
         options={{
           title: "Perfil",

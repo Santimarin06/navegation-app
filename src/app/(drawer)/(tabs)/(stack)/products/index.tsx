@@ -1,10 +1,19 @@
+import CustomButton from "@/shared/CustomButton";
+import { useCartItems } from "@/store/cart.store";
 import { products } from "@/store/products.store";
 import { Link } from "expo-router";
 import { FlatList, Text, View } from "react-native";
 
 const ProductsScreen = () => {
+  const cartItems = useCartItems();
+
   return (
     <View className="flex flex-1 px-4">
+      <View className="flex-row justify-end py-4">
+        <Link href="/cart" asChild>
+          <CustomButton>{`Carrito (${cartItems.length})`}</CustomButton>
+        </Link>
+      </View>
       <FlatList
         data={products}
         keyExtractor={(item) => item.id}
